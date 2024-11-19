@@ -1,5 +1,6 @@
 package com.example.myapplicationcourse.firstapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.enableEdgeToEdge
@@ -29,6 +30,10 @@ class FirstAppActivity : AppCompatActivity() {
 
             if (name.isNotEmpty()) {
                 Log.i("FirstAppActivity", "Button Pulsado $name")
+
+                val intent = Intent(this, ResultActivity::class.java)
+                intent.putExtra("EXTRA_NAME", name)
+                startActivity(intent)
             }
         }
     }
