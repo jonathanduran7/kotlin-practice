@@ -8,6 +8,7 @@ import androidx.appcompat.widget.AppCompatButton
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.myapplicationcourse.R
+import com.example.myapplicationcourse.firstapp.imccalculator.ImcCalculatorActivity
 
 class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +35,8 @@ class MenuActivity : AppCompatActivity() {
     }
 
     private fun navigateToIMCApp() {
-        TODO("Not yet implemented")
+        val intent = Intent(this, ImcCalculatorActivity::class.java)
+        startActivity(intent)
     }
 
     private fun navigateToSaludApp(){
