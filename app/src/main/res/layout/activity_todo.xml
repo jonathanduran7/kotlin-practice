@@ -11,7 +11,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@color/todo_background_todo_app"
-        tools:context=".firstapp.todoApp.TodoActivity">
+        tools:context=".firstapp.todoApp.TodoActivity"
+        >
 
         <TextView
             app:layout_constraintTop_toTopOf="parent"
