@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MyApplicationCourse"
         tools:targetApi="31">
         <activity
+            android:name=".firstapp.todoApp.TodoActivity"
+            android:exported="false" />
+        <activity
             android:name=".firstapp.imccalculator.ResultIMCActivity"
             android:exported="false" />
         <activity

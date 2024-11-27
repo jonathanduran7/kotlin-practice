@@ -8,4 +8,8 @@
     <string name="calculate">Calcular</string>
     <string name="recalculate">Recalcular</string>"
     <string name="resulTitle">Resultado</string>
+
+    <string name="saludApp">SaludApp</string>
+    <string name="imcApp">ImcApp</string>
+    <string name="todoApp">TODOAPP</string>
 </resources>
