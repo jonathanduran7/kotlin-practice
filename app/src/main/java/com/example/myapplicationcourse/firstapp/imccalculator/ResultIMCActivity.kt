@@ -31,7 +31,7 @@ class ResultIMCActivity : AppCompatActivity() {
 
         btnRecalculate = findViewById(R.id.btnRecalculate)
         btnRecalculate.setOnClickListener {
-            finish()
+            onBackPressedDispatcher.onBackPressed()
         }
 
     }
