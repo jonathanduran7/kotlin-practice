@@ -24,6 +24,10 @@ class ImcCalculatorActivity : AppCompatActivity() {
     private var currentAge: Int = 18
     private var currentHeight: Int = 120
 
+    companion object {
+        const val IMC_KEY = "IMC_RESULT"
+    }
+
     private lateinit var viewMale: CardView
     private lateinit var viewFemale: CardView
     private lateinit var tvHeight: TextView
@@ -112,7 +116,7 @@ class ImcCalculatorActivity : AppCompatActivity() {
 
     private fun navigateToResult(result: Double){
         val intent = Intent(this, ResultIMCActivity::class.java)
-        intent.putExtra("result", result)
+        intent.putExtra(IMC_KEY, result)
         startActivity(intent)
     }
 
