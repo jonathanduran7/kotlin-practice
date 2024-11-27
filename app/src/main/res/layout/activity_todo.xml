@@ -26,9 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Categorias"
-        android:layout_marginHorizontal="32dp"
-        android:textAllCaps="true"
-        android:textColor="@color/todo_subtitle_text"
+        style="@style/TodoSubtitle"
         />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -41,11 +39,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TAREAS"
-        android:layout_marginTop="32dp"
-        android:layout_marginHorizontal="32dp"
-        android:textColor="@color/todo_subtitle_text"
-        android:textAllCaps="true"
+        android:layout_marginTop="15dp"
+        style="@style/TodoSubtitle"
         />
 
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rvTasks"
+        />
 </LinearLayout>
