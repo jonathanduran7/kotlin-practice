@@ -236,4 +236,14 @@
         </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btnCalculate"
+        android:layout_width="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/calculate"
+        android:layout_height="80dp"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
