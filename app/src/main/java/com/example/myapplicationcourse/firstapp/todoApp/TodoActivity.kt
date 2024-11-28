@@ -99,9 +99,14 @@ class TodoActivity : AppCompatActivity() {
         rvCategories.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         rvCategories.adapter = categoriesAdapter
 
-        tasksAdapter = TasksAdapter(tasks)
+        tasksAdapter = TasksAdapter(tasks, {onItemSelected(it)})
         rvTasks.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         rvTasks.adapter = tasksAdapter
+    }
+
+    private fun onItemSelected(position: Int){
+        tasks[position].isChecked = !tasks[position].isChecked
+        updateTasks()
     }
 
     private fun updateTasks(){
