@@ -2,6 +2,10 @@ package com.example.myapplicationcourse.firstapp.todoApp
 
 import android.app.Dialog
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -56,8 +60,33 @@ class TodoActivity : AppCompatActivity() {
     private fun showDialog() {
         val dialog = Dialog(this)
         dialog.setContentView(R.layout.dialog_task)
+
+        val btnAddTask: Button = dialog.findViewById(R.id.btnAddTask)
+        val etTask: EditText = dialog.findViewById(R.id.etTask)
+        val rgCategory: RadioGroup = dialog.findViewById(R.id.rgCategories)
+
+        btnAddTask.setOnClickListener {
+
+            if (etTask.text.toString().isEmpty()) {
+                etTask.error = "No puede estar vacío"
+                return@setOnClickListener
+            }
+
+            val selectedId = rgCategory.checkedRadioButtonId
+            val selectedRadioButton: RadioButton = rgCategory.findViewById(selectedId)
+            val currentCategory: TaskCategory = when (selectedRadioButton.text) {
+                "Negocios" -> TaskCategory.Business
+                "Personal" -> TaskCategory.Personal
+                else -> TaskCategory.Other
+            }
+            tasks.add(Task(etTask.text.toString(), currentCategory))
+            updateTasks()
+            dialog.hide()
+        }
+
         dialog.show()
     }
+
 
     private fun initComponent() {
         rvCategories = findViewById(R.id.rvCategories)
@@ -73,6 +102,9 @@ class TodoActivity : AppCompatActivity() {
         tasksAdapter = TasksAdapter(tasks)
         rvTasks.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         rvTasks.adapter = tasksAdapter
+    }
 
+    private fun updateTasks(){
+        tasksAdapter.notifyDataSetChanged()
     }
 }
