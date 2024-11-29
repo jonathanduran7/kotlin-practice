@@ -33,4 +33,13 @@
         android:background="@color/teal_200"
         android:layout_marginTop="15dp"
         android:text="@string/todoApp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSuperHero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/teal_200"
+        android:layout_marginTop="15dp"
+        android:text="SUPERHERO"/>
+
 </LinearLayout>
