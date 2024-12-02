@@ -46,8 +46,18 @@ dependencies {
     implementation(libs.material)
 
     //retrofit
-    implementation(libs.retrofit)
-    implementation(libs.converter.gson)
+//    implementation(libs.converter.gson)
+//    implementation(libs.retrofit)
+
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    //Picasso
+    implementation("com.squareup.picasso:picasso:2.8")
+
+    //dotenv
+    implementation("io.github.cdimascio:dotenv-kotlin:6.4.1")
+
 
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
