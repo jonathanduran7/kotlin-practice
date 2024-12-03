@@ -58,6 +58,8 @@ dependencies {
     //dotenv
     implementation("io.github.cdimascio:dotenv-kotlin:6.4.1")
 
+    //DataStore
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
 
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
