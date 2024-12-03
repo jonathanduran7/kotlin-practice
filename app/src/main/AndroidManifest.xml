@@ -15,6 +15,9 @@
         android:theme="@style/Theme.MyApplicationCourse"
         tools:targetApi="31">
         <activity
+            android:name=".firstapp.superheroapp.DetailSuperheroActivity"
+            android:exported="false" />
+        <activity
             android:name=".firstapp.superheroapp.SuperHeroeListActivity"
             android:exported="false" />
         <activity

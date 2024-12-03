@@ -1,5 +1,6 @@
 package com.example.myapplicationcourse.firstapp.superheroapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.enableEdgeToEdge
@@ -47,7 +48,9 @@ class SuperHeroeListActivity : AppCompatActivity() {
             override fun onQueryTextChange(newText: String?) = false
         })
 
-        adapter = SuperHeroAdapter()
+        adapter = SuperHeroAdapter{
+            navigateToDetail(it)
+        }
         binding.rvHeroesList.setHasFixedSize(true)
         binding.rvHeroesList.layoutManager = LinearLayoutManager(this)
         binding.rvHeroesList.adapter = adapter
@@ -78,5 +81,11 @@ class SuperHeroeListActivity : AppCompatActivity() {
             .baseUrl("https://superheroapi.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
+    }
+
+    private fun navigateToDetail(id: String){
+        val intent = Intent(this, DetailSuperheroActivity::class.java)
+        intent.putExtra(DetailSuperheroActivity.EXTRA_ID,id)
+        startActivity(intent)
     }
 }
